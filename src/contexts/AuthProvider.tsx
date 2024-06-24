@@ -61,6 +61,7 @@ const AuthProvider = ({ children }: any) => {
 
     const logoutUser = () => {
         localStorage.removeItem("ecomm-react-token")
+        setAuthToken(null)
         navigate('/login')
     }
 
