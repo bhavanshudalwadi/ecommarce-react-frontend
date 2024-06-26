@@ -10,6 +10,11 @@ export const apiURL =
         ? "https://ecommerce-backend.vercel.app/api"
         : "http://localhost:4000/api";
 
+export const imageURL =
+process.env.NODE_ENV === "production"
+    ? "https://ecommerce-backend.vercel.app/uploads/"
+    : "http://localhost:4000/uploads/";
+
 const axiosInstance = axios.create({
     baseURL: apiURL,
     timeout: 300000
@@ -73,7 +78,7 @@ export function createOrder(token: string, data: { cart_ids: string[] }) {
 }
 // Get Order List
 export function getOrderList(token: string) {
-    return axiosInstance.get(`/oredrs/get`, {
+    return axiosInstance.get(`/orders/get`, {
         headers: {
             "Auth-Token": token
         }

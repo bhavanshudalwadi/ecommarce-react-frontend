@@ -6,6 +6,7 @@ import Products from '../pages/Products';
 import Cart from '../pages/Cart';
 import Contact from '../pages/Contact';
 import ProductDetails from '../pages/ProductDetails';
+import Orders from '../pages/Orders';
 
 const MainNavigation = () => {
     const { authToken } = useAuthContext();
@@ -18,6 +19,7 @@ const MainNavigation = () => {
             <Route path="/" element={<Products as="Home" />}/>
             <Route path="/products" element={<Products as="Products" />}/>
             <Route path="/cart" element={<Cart />}/>
+            <Route path="/orders" element={<Orders />}/>
             <Route path="/contact" element={<Contact />}/>
             <Route path="/product-details/:id" element={<ProductDetails />}/>
             

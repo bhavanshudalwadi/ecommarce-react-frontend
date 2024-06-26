@@ -38,20 +38,20 @@ const Products = ({ as }: any) => {
                     <div className="col-md-3" key={p._id}>
                         <div className="card mt-3">
                             <Link to={`/product-details/${p._id}`}>
-                                <img src={p.image} className="card-img-top" alt="product-image" />
+                                <img src={p.image} className="card-img-top" style={{height: 290}} alt="product-image" />
                             </Link>
                                 <div className="card-body">
                                     <Link to={`/product-details/${p._id}`} style={{textDecoration: 'none', color: '#000'}}>
-                                        <h5 className="card-title">{p.name}</h5>
+                                        <h5 className="card-title product-name">{p.name}</h5>
                                         <h4>₹ {p.price}</h4>
                                     </Link>
                                     { p.qty === 0
                                         ? <button className="btn btn-primary w-100" onClick={() => handleAddToCart(p._id)}>Add To Cart</button>
-                                        : <div className='d-flex justify-content-evenly'>
+                                        : <div className='d-flex justify-content-end'>
                                             <button className="btn btn-primary" onClick={() => handleQtyUpdate(p._id, p.qty - 1)}>
                                                 <i className="bi bi-dash-lg"></i>
                                             </button>
-                                            <span className="card py-1 px-3 fs-5">{p.qty}</span>
+                                            <span className="card py-1 px-3 fs-5 mx-2">{p.qty}</span>
                                             <button className="btn btn-primary" onClick={() => handleQtyUpdate(p._id, p.qty + 1)}>
                                                 <i className="bi bi-plus-lg"></i>
                                             </button>

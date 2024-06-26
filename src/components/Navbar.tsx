@@ -32,18 +32,18 @@ const Navbar = () => {
                             </li>
                         </>
                         :<>
-                            {/* <li className="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/orders">Orders</Link>
-                            </li> */}
+                            </li>
                         </>}
                     </ul>
                     <form className="d-flex" role="search">
-                        <Link type="button" className="btn btn-primary" style={{width: 100}} to="/cart">
+                        <Link type="button" className="btn btn-primary" to="/cart">
                             <i className="bi bi-cart-fill"></i>
                             <span className='ms-2'>Cart</span>
                         </Link>
                         {authToken?
-                            <button type="button" className="btn btn-primary ms-2" style={{width: 100}} onClick={logoutUser}>
+                            <button type="button" className="btn btn-danger ms-2" onClick={() => confirm('Are you sure want to logout?') && logoutUser()}>
                                 <span className='me-2'>Logout</span>
                                 <i className="bi bi-box-arrow-right"></i>
                             </button>
